@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jakarta EE Chat</title>
+     <link rel="stylesheet" href="web.css">
+<body>
+    <h2>Chat Room</h2>
+    <textarea id="chat" rows="10" cols="50" readonly></textarea><br>
+    <input id="msg" type="text" />
+    <button onclick="send()">Send</button>
+
+    <script>
+        const socket = new WebSocket("ws://localhost:8080/real-time-chat/chat");
+
+        socket.onmessage = function(event) {
+            document.getElementById("chat").value += event.data + "\n";
+        };
+
+        function send() {
+            let message = document.getElementById("msg").value;
+            socket.send(message);
+            document.getElementById("msg").value = "";
+        }
+    </script>
+</body>
+</html>

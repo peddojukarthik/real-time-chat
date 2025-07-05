@@ -1,0 +1,26 @@
+body {
+            margin: 0;
+            padding: 0;
+            background-image: url(Purples-5.png);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+
+        #chat {
+            width: 80%;
+            height: 200px;
+            margin: 20px auto;
+            display: block;
+        }
+
+        #msg {
+            width: 60%;
+            margin-left: 20%;
+        }
+
+        button {
+            padding: 8px 16px;
+            margin-left: 10px;
+        }
